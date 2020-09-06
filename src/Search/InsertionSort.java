@@ -2,13 +2,14 @@ package Search;
 
 public class InsertionSort {
 
-    public static void sort (int arr[]){
+    void sort (int arr[]){
         //assign n the length of the array
         int n = arr.length;
 
         for (int j = 1; j < n; j++){
             //save the value to compare
             int key = arr[j];
+            //definition of the iterator wich will be compared
             int i = j-1;
 
             while ((i >= 0) && (arr[i] > key)){
@@ -22,8 +23,6 @@ public class InsertionSort {
     static void printArray (int arr[]){
         int n = arr.length;
 
-        System.out.println();
-
         for (int i = 0; i < n; i++){
             System.out.print(arr[i] + "\t");
         }
@@ -35,11 +34,16 @@ public class InsertionSort {
         //array example
         int arr[] = {57, 11, 5, 9, 11, 7, 2 ,6, 17};
 
-        //creation of the object of Search.InsertionSort
+        //creation of the new object of InsertionSort class
         InsertionSort objectSort = new InsertionSort();
+
+        System.out.println("\nGiven array :");
+        printArray(arr);
+
+        System.out.println("Array sorted:");
+        //insert-sort the array example
         objectSort.sort(arr);
 
-        //printing the array
         printArray(arr);
     }
 }
